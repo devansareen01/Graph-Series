@@ -1,6 +1,6 @@
-
-// User function Template for Java
-class DisjointSet {
+import java.util.* ;
+import java.io.*; 
+ class DisjointSet {
 
     
     int size[];
@@ -37,7 +37,7 @@ class DisjointSet {
     }
 }
 
-class Pair {
+ class Pair {
     int u;
     int v;
     int w;
@@ -48,14 +48,13 @@ class Pair {
         this.w = w;
     }
 }
-
-class Solution {
-    static int spanningTree(int V, int E, int edges[][]) {
+public class Solution {
+    public static int kruskalMST(int V, int E, ArrayList<ArrayList<Integer>> graph) {
         ArrayList<Pair> adj = new ArrayList<>();
      
 
-            for (int it[] : edges) {
-                adj.add(new Pair(it[0], it[1], it[2]));
+            for (ArrayList<Integer> it : graph) {
+                adj.add(new Pair(it.get(0), it.get(1), it.get(2)));
             }
    
         DisjointSet ds = new DisjointSet(V);
